@@ -6,6 +6,7 @@ import { ByContryPageComponent } from './pages/by-contry-page/by-contry-page.com
 import { CountryPageComponent } from './pages/country-page/country-page.component';
 import { CountriesRoutingModule } from './countries-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { CountryTableComponent } from './components/country-table/country-table.component';
 
 
 
@@ -15,6 +16,7 @@ import { SharedModule } from '../shared/shared.module';
     ByRegionComponent,
     ByContryPageComponent,
     CountryPageComponent,
+    CountryTableComponent,
   ],
   imports: [
     CommonModule,
