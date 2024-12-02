@@ -11,11 +11,18 @@ import { Country } from '../../interfaces/country';
 })
 export class ByCapitalPageComponent implements OnInit {
   public countries: Country[] = [];
-  constructor(private countriesService:CountriesService) { }
+  public isLoading: boolean = false;
+
+  constructor(private countriesService: CountriesService) { }
   ngOnInit() { }
   searchByCapital(term: string): void {
+    this.isLoading = true;
     console.log('desde Capytal-Page');
-    console.log({term});
-    this.countriesService.searchCapital(term).subscribe(countries => this.countries = countries)
+    console.log({ term });
+    this.countriesService.searchCapital(term).subscribe(countries => {
+      this.countries = countries
+      this.isLoading = false
+    }
+  )
   }
 }
